@@ -57,15 +57,9 @@ var TLDataContext = {
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const min = 4;
-  const max = 50;
-
-  // 找到所有 .elTicketNum
-  const els = document.querySelectorAll('.elTicketNum');
-
-   els.forEach(el => {
-    const num = Math.floor(Math.random() * (max - min + 1)) + min; // 4~50
-    el.textContent = 'N-' + num; // 修改前缀为 N-
+  document.querySelectorAll('.elTicketNum').forEach(el => {
+    // 隐藏了变量声明，直接一步到位赋值
+    el.textContent = `N-${Math.floor(Math.random() * 47) + 4}`;
   });
 });
 </script>
