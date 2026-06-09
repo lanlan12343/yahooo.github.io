@@ -1,5 +1,3 @@
-
-<!DOCTYPE HTML>
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
@@ -13,30 +11,30 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="YJPassMarket">
 <meta name="twitter:domain" content="passmarket.yahoo.co.jp">
-<meta property="og:type" content="website"/>
-<meta property="og:image" content="https://s.yimg.jp/images/passmarket/smartphone/front/image/1.0.0/img_ogp.png"/>
-<meta property="og:description" content="手数料0円！Yahoo! JAPANのデジタルチケット"/>
-<meta property="og:site_name" content="PassMarket"/>
-<link rel="stylesheet" href='https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/common.css' media="all">
-<link rel="stylesheet" href='https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/lib.css' media="all">
-<link rel="stylesheet" href='https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/header.css' media="all">
-<link rel="stylesheet" href='https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/footer.css' media="all">
-            <link rel="stylesheet" href='https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/front.css' media="all">
+<meta property="og:type" content="website">
+<meta property="og:image" content="https://s.yimg.jp/images/passmarket/smartphone/front/image/1.0.0/img_ogp.png">
+<meta property="og:description" content="手数料0円！Yahoo! JAPANのデジタルチケット">
+<meta property="og:site_name" content="PassMarket">
+<link rel="stylesheet" href="https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/common.css" media="all">
+<link rel="stylesheet" href="https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/lib.css" media="all">
+<link rel="stylesheet" href="https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/header.css" media="all">
+<link rel="stylesheet" href="https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/footer.css" media="all">
+            <link rel="stylesheet" href="https://s.yimg.jp/images/passmarket/smartphone/front/css/2.1.13/front.css" media="all">
     
-<script type="text/javascript" src="https://s.yimg.jp/images/commerce/js/libs/jquery/core/3.5.1/jquery.min.js"></script>
-<script type="text/javascript" src='https://s.yimg.jp/images/passmarket/js/smartphone/my/3.0.0/ticket/sheet_all.js'></script>
+<script src="https://s.yimg.jp/images/ds/yas/tmual-4.2.0.min.js" async=""></script><script type="text/javascript" src="https://s.yimg.jp/images/commerce/js/libs/jquery/core/3.5.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://s.yimg.jp/images/passmarket/js/tablet/my/3.0.0/ticket/sheet_all.js"></script>
 <script src="https://s.yimg.jp/images/passmarket/js/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-<link rel="stylesheet" href="https://s.yimg.jp/images/passmarket/js/libs/jqueryui/1.12.1/jquery-ui.min.css" />
+<link rel="stylesheet" href="https://s.yimg.jp/images/passmarket/js/libs/jqueryui/1.12.1/jquery-ui.min.css">
 
 <meta name="format-detection" content="telephone=no">
-<link rel="apple-touch-icon" href="https://s.yimg.jp/images//ipn/wcb/passmarket129.png" />
-<meta name="application-name" content="PassMarket"/>
+<link rel="apple-touch-icon" href="https://s.yimg.jp/images//ipn/wcb/passmarket129.png">
+<meta name="application-name" content="PassMarket">
 <link rel="manifest" href="/manifest.json">
 <script type="text/javascript">
 var TLDataContext = {
   ual : {
     pageview : {
-      opttype : 'smartphone',
+      opttype : 'pc',
       content_id : '',
       id_type : '',
       nopv : 'false',
@@ -48,53 +46,21 @@ var TLDataContext = {
   }
 };
 </script>
-<script type="text/javascript" async src="https://s.yimg.jp/images/ds/managed/1/managed-ual.min.js?tk=d91e97e5-f608-408f-9d68-1a7711fdbb52&service=passmarket">
+<script type="text/javascript" async="" src="https://s.yimg.jp/images/ds/managed/1/managed-ual.min.js?tk=d91e97e5-f608-408f-9d68-1a7711fdbb52&amp;service=passmarket">
 </script>
-<script async src="https://s.yimg.jp/images/ds/yas/ya-1.6.4.min.js"></script>
+<script async="" src="https://s.yimg.jp/images/ds/yas/ya-1.6.4.min.js"></script>
 <script>
     window.yacmds = window.yacmds || [];
     window.ya = window.ya || function () { yacmds.push(arguments) };
     ya('init', '88154d68f0664124b31972feafcf3c56', 'f1f7526a-54bc-402a-b966-a9d016453602');
     ya('hit', 'pageview,webPerformance');
 </script>
-<script>
-document.addEventListener('DOMContentLoaded', () => {
-    const min = 4;
-    const max = 50;
-    const els = document.querySelectorAll('.elTicketNum');
-    
-    // 1. 安全检查：如果标签数量超过了数字池的总量，抛出提示
-    if (els.length > (max - min + 1)) {
-        console.error(`标签数量 (${els.length}) 超过了可选票号的最大范围 (${max - min + 1})，必定会出现重复！`);
-        return;
-    }
-
-    // 2. 生成包含所有可用数字的数组池 [4, 5, 6, ..., 50]
-    const numberPool = [];
-    for (let i = min; i <= max; i++) {
-        numberPool.push(i);
-    }
-
-    // 3. 为每个标签抽取一个不重复的票号
-    els.forEach(el => {
-        // 从数字池中随机选择一个索引
-        const randomIndex = Math.floor(Math.random() * numberPool.length);
-        
-        // 使用 splice 将该数字从池中移除并取出，确保不会被再次抽到
-        const num = numberPool.splice(randomIndex, 1)[0];
-        
-        // 赋值给标签
-        el.textContent = 'A-' + num;
-    });
-});
-</script>
-
-</head>
+<link rel="preconnect" href="https://dsb.yahoo.co.jp"></head>
 <body>
 <!-- #wrapper -->
 <div id="wrapper">
 <header id="header">
-<div >
+<div>
 <nav class="ypMdHeaderNaviRn">
 <ul class="elMainNavi">
 <li class="logo"><span><a href="https://passmarket.yahoo.co.jp/">PassMarket</a></span></li>
@@ -113,6 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
 <li><a href="https://passmarket.yahoo.co.jp/my/ticket/list">購入済みのチケット</a></li>
 <li><a href="https://passmarket.yahoo.co.jp/my/entry/list">抽選申し込み履歴</a></li>
 <li><a href="https://passmarket.yahoo.co.jp/user/update/edit">ユーザー情報の編集</a></li>
+</ul>
+
 <!-- Notification header -->
 <!-- These checks are performed to prevent an empty <elNotice> element from being generated -->
     <div class="elNotice elNoticeBgWh">
@@ -167,14 +135,14 @@ document.addEventListener('DOMContentLoaded', () => {
 <div class="psmTicketWrap" id="swipe" style="width: 486px;">
 <div class="psmTicket" style="float: left; width: 468px; padding-left: 9px; padding-right: 9px;" value="1">
 <div id="stampCheckinId1"></div>
-<div id="psmKakao1" style="display:none" value="デジタルチケットを1枚送付します。\n\nイベント名：【横浜会場】物販入場整理券6月12日(金)\nチケット番号：E-23\nチケット名：6月12日物販入場整理券　14：00〜\n購入者名：リ シン\n\n印刷または画面に表示してご利用いただけます。\n\n詳しい受付方法はこちらをご確認ください。
-https://passmarket.yahoo.co.jp/event/show/acception/02gzcrvi3hs41.html#accept\n\nPassMarketのチケットについて
+<div id="psmKakao1" style="display:none" value="デジタルチケットを1枚送付します。\n\nイベント名：【横浜会場】物販入場整理券6月12日(金)\nチケット番号：N-20\nチケット名：6月12日物販入場整理券　14：00〜\n購入者名：LIU XIAOLIANG\n\n印刷または画面に表示してご利用いただけます。\n\n詳しい受付方法はこちらをご確認ください。
+https://passmarket.yahoo.co.jp/event/show/acception/02t7m8t60d551.html#accept\n\nPassMarketのチケットについて
 https://blog-passmarket.yahoo.co.jp/archives/utilization.html"></div>
 <section class="dspTransferError libNotice elFail" style="display:none">
 <p style="text-align: left"></p>
 </section>
 <div class="ptsQr dspTransferAfter" style="display:none">
-<p class="elTicketNum">E-23</p>
+<p class="elTicketNum">N-20</p>
 <div class="ptsTransferAfter">
 <dl>
   <dt>このチケットは<br>さんが受け取り済みです</dt>
@@ -184,51 +152,50 @@ https://blog-passmarket.yahoo.co.jp/archives/utilization.html"></div>
 <div class="dspTransferBefore" style="display:block">
 <div class="ptsIndispErr" style="margin-bottom:20px"><p class="elInfo">入口にて整理券をご提示ください。</p></div>
 <div class="ptsTickRecept">
-  <p class="elTicketNum">M-000</p>
+  <p class="elTicketNum">N-20</p>
     <p style="font-size:12px;">【横浜会場】物販入場整理券6月12日(金)</p>
-  <p class="elItemName">6月12日物販入場整理券　10：00〜</p>
+  <p class="elItemName">6月12日物販入場整理券　14：00〜</p>
   </div>
    <div class="ptsStatesBg" style="margin:0 auto 17px;background:url(https://psm-bucket-1.west.edge.storage-yahoo.jp/psm-udwpjcairrijnfo2rtuvg/ticket/88/02t7m8t60d551/de/56/N/1/m_1_XmDE6Hlf1jYimyslzWVVA.png);background-repeat:no-repeat;background-blend-mode:overlay;background-position:center top;background-size:300px 230px;width: 300px;">
-          <div class="ptsStates" id="psmCheckinFieldE-23">
-      <div id="psmTicketE-23">
+          <div class="ptsStates" id="psmCheckinFieldN-20">
+      <div id="psmTicketN-20">
             </div>
       <p class="elTxt">受付の係員に画面を提示してください<br>
     一度受付すると元に戻せません</p>
-      <div id="psmCheckinPostButtonE-23" class="elBtn" style="display:none;">
+      <div id="psmCheckinPostButtonN-20" class="elBtn" style="display:none;">
         <p class="libButton elGray sizL">受付しました</p>
       </div>
             <div class="checkinPreButton elBtn">
         <a href="javascript:void(0);" class="libButton elDeepGray sizL">係員が対応します</a>
       </div>
-      <div class="checkinWrap ptsSlideBtn" id="psmCheckinWrapE-23" style="display:none">
+      <div class="checkinWrap ptsSlideBtn" id="psmCheckinWrapN-20" style="display:none">
         <div class="well">
           <div class="elReceive" style="width:100%">
-            <span style="z-index:2;" class="checkinButton slider" data-index="1" id="checkinButtonE-23" value="PxHqcZ7tmMFVHllYxQKjtzBZbBgWrxPZyH_t1taQ4cNAVQcU_01mDJ2MCrJRJyzB2A7LIr2fA90YD-WEOA" name="E-23"></span>
-          <span id="checkinMsgE-23" class="decTxt">受付する</span>
+          <span style="z-index: 2; position: relative;" class="checkinButton slider ui-draggable ui-draggable-handle" data-index="1" id="checkinButtonN-20" value="SO7Y_fgO5GMexmR0zISWcCCuO3Z7lUOqniYA1VHXZutZWrnv92MDBmCqZyls7rMBxaXGnPQ2BLSGroCV" name="N-20"></span>
+          <span id="checkinMsgN-20" class="decTxt">受付する</span>
           </div>
         </div>
       </div>
           </div>
  </div>
  <div class="ptsBuyer">
-  <p class="decMb5">リ シン</p>
-    <p class="decMb5">購入日：2026年5月27日</p>
-       </div>
+  <p class="decMb5">LIU XIAOLIANG</p>
+    <p class="decMb5">購入日：2026年05月27日</p>
+        </div>
 </div> <!-- dspTransferBefore -->
  </div>
 </div></div>
 <div class="ptsNotesWrap" style="display:none;">
   </div><!-- /ptsNotesWrap -->
 <div style="clear:both;"></div>
+
 </div>
 </div>
 </section><!-- /ypMdTicketInfo -->
 <!-- /ticketInfo -->
 </div>
 <!-- /#content -->
-<div id="dialog-message">
-<p></p>
-</div>
+
 
 <div id="dialog-form" style="display:none">
   <form>
@@ -254,11 +221,11 @@ https://blog-passmarket.yahoo.co.jp/archives/utilization.html"></div>
 <div class="window" style="margin-top:50px;">
 
 <div class="untHead">
-<p class="elLead">チケットを保存しましょう</p>
+<p class="elLead">お持ちのスマートフォンに<br>メール送信しましょう</p>
 </div>
 
 <div class="untBody">
-<p class="elTxt">ブックマークでURLを<br>保存してください</p>
+<p class="elTxt"></p>
 </div>
 
 <div class="untFoot">
@@ -270,23 +237,21 @@ https://blog-passmarket.yahoo.co.jp/archives/utilization.html"></div>
 </div><!-- /window -->
 </section><!-- /ypMdDialogue -->
 
-
 <section class="ypMdTicketCollect" style="display:none; height: 2000px;">
-  <div class="elFixed">
-  <header class="libLabel sizM decMb20">
-  <h2 class="elTitle">このチケットを友達に贈る</h2>
-  </header>
+<div class="elFixed">
+<header class="libLabel sizM decMb20">
+<h2 class="elTitle">このチケットを友達に贈る</h2>
+</header>
 
-  <div class="ptsPdfMenu btnGroupTransfer btnHandleTransfer">
-  <ul>
-  <li><p class="elMail btnHandleGroupTransferEmail"><a href="javascript:void(0);">メール</a></p></li>
-  <li><p class="elLine btnHandleGroupTransferLine"><a href="javascript:void(0);">LINE</a></p></li>
-  </ul>
-  </div>
-  </div>
-  </div>
-  </section>
-  <!-- /ticketInfoCollect -->
+<div class="ptsPdfMenu btnGroupTransfer btnHandleTransfer">
+<ul>
+<li><p class="elMail btnHandleGroupTransferEmail"><a href="javascript:void(0);">メール</a></p></li>
+</ul>
+</div>
+</div>
+</section></div>
+
+<!-- /ticketInfoCollect -->
 
 <!-- JavaScript -->
 <script type="text/javascript">
@@ -294,9 +259,9 @@ https://blog-passmarket.yahoo.co.jp/archives/utilization.html"></div>
 YAHOO.JP.passmarket.kakao_url = "";
 YAHOO.JP.passmarket.kakao_appid = "passmarket.yahoo.co.jp";
 YAHOO.JP.passmarket.loadimage_url = "https://s.yimg.jp/images/passmarket/smartphone/front/image/1.0.0/ico_loading_01.gif";
-YAHOO.JP.passmarket.checkin_url = "https://lanlan12343.github.io/yahooo.github.io/response.html?client=web_buyer";
-YAHOO.JP.passmarket.crumb  = "M2YxM2U3ZjhkMDVic8QhoSLMd7R5LvIgRHo_YXHFjEoUrnhuDP5MpWh6g0XIJ79QLGUCd9tMObymgnZ9jKKh-Qk_8o9inDCtgLEp9iiTm-s2tJUJxpy6r44ONI697i4pnan8wY6KbBNV3XGwCCeBPrFheIes0oOL2CWBDFr6dnMpEpCbekL1ayd6JGCTmfI1A0RJJn9wPPaBka_w9lvN_paN-9QojM53NZYSs_6rEkJwMHFk_II";
-YAHOO.JP.passmarket.order_id = "0214T8AYR8URY";
+YAHOO.JP.passmarket.checkin_url = "https://xzr139.github.io/my-page/response.html?client=web_buyer";
+YAHOO.JP.passmarket.crumb  = "NGFjNjlhZmI5MGExY0t5AiMIc-GC24nyyV1zBFY2KrbZmypEgQqlaXHmtfMyBU0CM18q7miUU6sfi74VsXKFNRo8uSjI90GJqPzJ_UQ_G7Dkd7uPnispn0u1tM-8ONA0WVpsLBHDzqeNPwUQe8YCw29Cv6P9st6q5l4ddgVanSn-FI8NaRFLQIzs978kPSS5Qxau8wKfR6dMdea7gCCHJ1fQJ7dDwTiXk1QHNa2sYNUtfRx_LjM";
+YAHOO.JP.passmarket.order_id = "02155WV6QR2EC";
 YAHOO.JP.passmarket.show_guest_dialog = "0";
 YAHOO.JP.passmarket.use_acception_code = "0";
 YAHOO.JP.passmarket.load_digishot = "0";
@@ -309,7 +274,6 @@ YAHOO.JP.passmarket.transfer_sys_error   = "システムエラーが発生しま
 YAHOO.JP.passmarket.transfer_subject     = "%E3%83%87%E3%82%B8%E3%82%BF%E3%83%AB%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%EF%BC%91%E6%9E%9A%E3%81%8A%E5%B1%8A%E3%81%91%E3%81%97%E3%81%BE%E3%81%99";
 YAHOO.JP.passmarket.transfer_body        = "%E2%80%BB%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E5%8F%97%E3%81%91%E5%8F%96%E3%82%8B%E3%81%93%E3%81%A8%E3%81%A7%E3%80%81%E5%88%A9%E7%94%A8%E8%A6%8F%E7%B4%84%EF%BC%88%20https%3A%2F%2Fyahoo.jp%2FKKFaT1%20%EF%BC%89%E3%81%AB%E5%90%8C%E6%84%8F%E3%81%97%E3%81%9F%E3%82%82%E3%81%AE%E3%81%A8%E3%81%BF%E3%81%AA%E3%81%97%E3%81%BE%E3%81%99%E3%80%82%0D%0A%0D%0A%E2%96%BC%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E3%82%92%E5%8F%97%E3%81%91%E5%8F%96%E3%82%8B%0D%0A";
 YAHOO.JP.passmarket.transfer_body_footer = "%E2%96%BC%E4%BD%BF%E3%81%84%E6%96%B9%E3%83%BB%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A0%85%0D%0Ahttps%3A%2F%2Fyahoo.jp%2FzAQzQ5%0D%0A%0D%0A%E7%99%BA%E8%A1%8C%EF%BC%9ALINE%E3%83%A4%E3%83%95%E3%83%BC%E6%A0%AA%E5%BC%8F%E4%BC%9A%E7%A4%BE";
-YAHOO.JP.passmarket.line_url             = "http://line.naver.jp";
 YAHOO.JP.passmarket.is_receiver = "0";
 YAHOO.JP.passmarket.is_meal_ticket = "0";
 
@@ -320,9 +284,9 @@ YAHOO.JP.passmarket.is_coupon_book = "0";
 <!-- JavaScript -->
 <footer id="footer">
 <section class="ypMdFooterDefault">
-<div class="untBody" >
+<div class="untBody">
 <div class="loginArea">
-<p class="loginName"><a href="https://accounts.yahoo.co.jp/profile?.src=psm&.done=https://passmarket.yahoo.co.jp/my/ticket/sheet%3Forder_id%3D0214T8AYR8URY%26index%3D1">登録情報</a></p><!-- Synchronize display of tablet & smartphone-->
+<p class="loginName"><a href="https://accounts.yahoo.co.jp/profile?.src=psm&amp;.done=https://passmarket.yahoo.co.jp/my/ticket/sheet%3Forder_id%3D02155WV6QR2EC%26index%3D1">登録情報</a></p><!-- Synchronize display of tablet & smartphone-->
 </div>
 <div class="ptsSNS">
 <p style="margin-bottom:10px;">最新情報をチェック</p>
@@ -337,8 +301,8 @@ YAHOO.JP.passmarket.is_coupon_book = "0";
 <li><a href="https://m.yahoo.co.jp/">Yahoo! JAPAN</a></li>
 </ul>
 <ul class="commonLink">
-<li><a href="https://passmarket.yahoo.co.jp/main/etc/countrycode?cc=jp&done=https%3A%2F%2Fpassmarket.yahoo.co.jp%2Fmy%2Fticket%2Fsheet%3Forder_id%3D0214T8AYR8URY%26index%3D1">日本語</a></li>
-<li><a href="https://passmarket.yahoo.co.jp/main/etc/countrycode?cc=us&done=https%3A%2F%2Fpassmarket.yahoo.co.jp%2Fmy%2Fticket%2Fsheet%3Forder_id%3D0214T8AYR8URY%26index%3D1">English</a></li>
+<li><a href="https://passmarket.yahoo.co.jp/main/etc/countrycode?cc=jp&amp;done=https%3A%2F%2Fpassmarket.yahoo.co.jp%2Fmy%2Fticket%2Fsheet%3Forder_id%3D02155WV6QR2EC%26index%3D1">日本語</a></li>
+<li><a href="https://passmarket.yahoo.co.jp/main/etc/countrycode?cc=us&amp;done=https%3A%2F%2Fpassmarket.yahoo.co.jp%2Fmy%2Fticket%2Fsheet%3Forder_id%3D02155WV6QR2EC%26index%3D1">English</a></li>
 </ul>
 <ul class="subLink">
 <li><a href="https://www.lycorp.co.jp/ja/company/privacypolicy/">プライバシーポリシー</a></li>
@@ -355,11 +319,11 @@ YAHOO.JP.passmarket.is_coupon_book = "0";
 <ul class="subLink elBtm">
 <li><a href="https://passmarket.yahoo.co.jp/tokuteisho/">特定商取引法の表示</a></li>
 </ul>
-<small>写真：アフロ<br>&copy; LY Corporation</small>
+<small>写真：アフロ<br>© LY Corporation</small>
 </div>
 </section>
 </footer>
-</div>
+
 
 <!-- resale footer -->
 <!-- /resale footer -->
@@ -371,5 +335,8 @@ YAHOO.JP.passmarket.is_coupon_book = "0";
 </section><!-- /ypMdPageTopFixed -->
 <!-- /pageTopFixed -->
 
-</body>
-</html>
+
+
+<div tabindex="-1" role="dialog" class="ui-dialog ui-corner-all ui-widget ui-widget-content ui-front ui-dialog-buttons ui-resizable" aria-describedby="dialog-message" aria-labelledby="ui-id-1" style="position: absolute; height: auto; width: 300px; top: 463.215px; left: 545.5px; z-index: 101; background: none rgb(255, 255, 255); color: rgb(34, 34, 34); font-size: 12px; text-align: center; border: 1px solid rgb(170, 170, 170); display: none;"><div class="ui-dialog-titlebar ui-corner-all ui-widget-header ui-helper-clearfix"><span id="ui-id-1" class="ui-dialog-title">&nbsp;</span><button type="button" class="ui-button ui-corner-all ui-widget ui-button-icon-only ui-dialog-titlebar-close" title="Close" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(170, 170, 170);"><span class="ui-button-icon ui-icon ui-icon-closethick"></span><span class="ui-button-icon-space"> </span>Close</button></div><div id="dialog-message" class="ui-dialog-content ui-widget-content" style="width: auto; min-height: 0px; max-height: none; height: auto; background: none; color: rgb(34, 34, 34); font-size: 12px; text-align: center;">
+<p>一度受付すると元に戻せません。<br>チケットを受付しますか？</p>
+</div><div class="ui-dialog-buttonpane ui-widget-content ui-helper-clearfix" style="background: none; color: rgb(34, 34, 34); font-size: 12px; text-align: center;"><div class="ui-dialog-buttonset dec-button-double"><button type="button" class="ui-button ui-corner-all ui-widget" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(170, 170, 170);">はい</button><button type="button" class="ui-button ui-corner-all ui-widget" style="background-color: rgb(255, 255, 255); border: 1px solid rgb(170, 170, 170);">いいえ</button></div></div><div class="ui-resizable-handle ui-resizable-n" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-e" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-s" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-w" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 90;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 90;"></div></div></body></html>
