@@ -59,16 +59,33 @@ var TLDataContext = {
 </script>
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  const min = 4;
-  const max = 50;
+    const min = 4;
+    const max = 50;
+    const els = document.querySelectorAll('.elTicketNum');
+    
+    // 1. 安全检查：如果标签数量超过了数字池的总量，抛出提示
+    if (els.length > (max - min + 1)) {
+        console.error(`标签数量 (${els.length}) 超过了可选票号的最大范围 (${max - min + 1})，必定会出现重复！`);
+        return;
+    }
 
-  // 找到页面上所有 .elTicketNum
-  const els = document.querySelectorAll('.elTicketNum');
+    // 2. 生成包含所有可用数字的数组池 [4, 5, 6, ..., 50]
+    const numberPool = [];
+    for (let i = min; i <= max; i++) {
+        numberPool.push(i);
+    }
 
-  els.forEach(el => {
-    const num = Math.floor(Math.random() * (max - min + 1)) + min; // 4~50
-    el.textContent = 'A-' + num;
-  });
+    // 3. 为每个标签抽取一个不重复的票号
+    els.forEach(el => {
+        // 从数字池中随机选择一个索引
+        const randomIndex = Math.floor(Math.random() * numberPool.length);
+        
+        // 使用 splice 将该数字从池中移除并取出，确保不会被再次抽到
+        const num = numberPool.splice(randomIndex, 1)[0];
+        
+        // 赋值给标签
+        el.textContent = 'A-' + num;
+    });
 });
 </script>
 
