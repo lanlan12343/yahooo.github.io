@@ -55,14 +55,44 @@ var TLDataContext = {
     ya('init', '88154d68f0664124b31972feafcf3c56', 'f1f7526a-54bc-402a-b966-a9d016453602');
     ya('hit', 'pageview,webPerformance');
 </script>
-<script>
 document.addEventListener('DOMContentLoaded', () => {
+  // 1. 获取当前日本时间（JST）的日期对象
+  const jstString = new Date().toLocaleString('en-US', { timeZone: 'Asia/Tokyo' });
+  const jstDate = new Date(jstString);
+
+  // 2. 获取当前日本时间的小时和分钟
+  const hours = jstDate.getHours();
+  const minutes = jstDate.getMinutes();
+
+  // 3. 计算从 10:00 开始经历了多少个“30分钟”
+  // 将当前时间转换为“今天第几分钟”，并减去 10 点的分钟数（10 * 60 = 600）
+  const totalMinutesSinceMidnight = (hours * 60) + minutes;
+  const minutesSince10AM = totalMinutesSinceMidnight - 600;
+
+  let prefix = 'A'; // 默认回退前缀
+
+  // 如果当前时间已经到了 10:00 或之后
+  if (minutesSince10AM >= 0) {
+    // 计算当前属于第几个 30 分钟区间（10:00-10:29 是第 0 个，10:30-10:59 是第 1 个...）
+    const index = Math.floor(minutesSince10AM / 30);
+    
+    // 限制最大只生成到字母 Z（即 26 个字母循环，防止超出英文字母范围）
+    const letterIndex = index % 26; 
+    
+    // 将索引转换为对应的英文字母（65 是大写字母 A 的 ASCII 码）
+    prefix = String.fromCharCode(65 + letterIndex);
+  } else {
+    // 【可选配置】如果当前是上午 10 点之前（如凌晨或早晨），默认使用字母 A
+    prefix = 'A'; 
+  }
+
+  // 4. 批量赋值给页面中的所有指定元素
   document.querySelectorAll('.elTicketNum').forEach(el => {
-    // 隐藏了变量声明，直接一步到位赋值
-    el.textContent = `A-${Math.floor(Math.random() * 27) + 10}`;
+    const randomNum = Math.floor(Math.random() * 27) + 10; // 生成 10 - 36 的随机数
+    el.textContent = `${prefix}-${randomNum}`;
   });
 });
-</script>
+
 </head>
 <body>
 <!-- #wrapper -->
